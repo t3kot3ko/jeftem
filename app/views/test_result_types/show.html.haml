@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @test_result_type.name
+%p
+  %b Color:
+  = @test_result_type.color
+
+= link_to 'Edit', edit_test_result_type_path(@test_result_type)
+\|
+= link_to 'Back', test_result_types_path

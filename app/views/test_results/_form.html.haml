@@ -1,0 +1,25 @@
+= form_for @test_result, html: { class: "form form-horizontal test_result" } do |f|
+  .form-group
+    = f.label :description, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :description, class: 'form-control', required: true
+    = f.error_span(:description)
+  .form-group
+    = f.label :finished_at, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :finished_at, class: 'form-control', required: true
+    = f.error_span(:finished_at)
+  .form-group
+    = f.label :execution_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :execution_id, class: 'form-control', required: true
+    = f.error_span(:execution_id)
+  .form-group
+    = f.label :test_result_type_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :test_result_type_id, class: 'form-control', required: true
+    = f.error_span(:test_result_type_id)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil,class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), test_results_path, :class => 'btn btn-default'

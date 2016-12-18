@@ -1,0 +1,25 @@
+- model_class = TestResult
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
+  = @test_result.description
+%p
+  %strong= model_class.human_attribute_name(:finished_at) + ':'
+  %br
+  = @test_result.finished_at
+%p
+  %strong= model_class.human_attribute_name(:execution_id) + ':'
+  %br
+  = @test_result.execution_id
+%p
+  %strong= model_class.human_attribute_name(:test_result_type_id) + ':'
+  %br
+  = @test_result.test_result_type_id
+
+
+= link_to t('.back', :default => t("helpers.links.back")), test_results_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_test_result_path(@test_result), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), test_result_path(@test_result), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

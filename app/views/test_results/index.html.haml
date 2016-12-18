@@ -1,0 +1,27 @@
+- model_class = TestResult
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:description)
+      %th= model_class.human_attribute_name(:finished_at)
+      %th= model_class.human_attribute_name(:execution_id)
+      %th= model_class.human_attribute_name(:test_result_type_id)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @test_results.each do |test_result|
+      %tr
+        %td= link_to test_result.id, test_result_path(test_result)
+        %td= test_result.description
+        %td= test_result.finished_at
+        %td= test_result.execution_id
+        %td= test_result.test_result_type_id
+        %td=l test_result.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_test_result_path(test_result), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), test_result_path(test_result), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_test_result_path, :class => 'btn btn-primary'

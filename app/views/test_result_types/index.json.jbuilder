@@ -1,0 +1,1 @@
+json.array! @test_result_types, partial: 'test_result_types/test_result_type', as: :test_result_type

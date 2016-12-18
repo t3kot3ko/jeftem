@@ -1,0 +1,1 @@
+json.partial! "test_result_types/test_result_type", test_result_type: @test_result_type

@@ -1,0 +1,45 @@
+- model_class = TestCase
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
+  = @test_case.title
+%p
+  %strong= model_class.human_attribute_name(:step) + ':'
+  %br
+  = @test_case.step
+%p
+  %strong= model_class.human_attribute_name(:precondition) + ':'
+  %br
+  = @test_case.precondition
+%p
+  %strong= model_class.human_attribute_name(:postcondition) + ':'
+  %br
+  = @test_case.postcondition
+%p
+  %strong= model_class.human_attribute_name(:expected_result) + ':'
+  %br
+  = @test_case.expected_result
+%p
+  %strong= model_class.human_attribute_name(:identifier) + ':'
+  %br
+  = @test_case.identifier
+%p
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
+  = @test_case.description
+%p
+  %strong= model_class.human_attribute_name(:summary) + ':'
+  %br
+  = @test_case.summary
+%p
+  %strong= model_class.human_attribute_name(:section_id) + ':'
+  %br
+  = @test_case.section_id
+
+
+= link_to t('.back', :default => t("helpers.links.back")), test_cases_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_test_case_path(@test_case), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), test_case_path(@test_case), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

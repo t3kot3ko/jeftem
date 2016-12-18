@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  executed_at: 2016-12-18 17:33:42
+  executor: one
+
+two:
+  executed_at: 2016-12-18 17:33:42
+  executor: two

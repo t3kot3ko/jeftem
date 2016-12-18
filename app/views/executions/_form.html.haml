@@ -1,0 +1,15 @@
+= form_for @execution, html: { class: "form form-horizontal execution" } do |f|
+  .form-group
+    = f.label :executed_at, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :executed_at, class: 'form-control', required: true
+    = f.error_span(:executed_at)
+  .form-group
+    = f.label :executor_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :executor_id, class: 'form-control', required: true
+    = f.error_span(:executor_id)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil,class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), executions_path, :class => 'btn btn-default'

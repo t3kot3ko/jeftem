@@ -1,0 +1,2 @@
+json.extract! test_case, :id, :title, :step, :precondition, :postcondition, :expected_result, :identifier, :description, :summary, :section_id, :created_at, :updated_at
+json.url test_case_url(test_case, format: :json)

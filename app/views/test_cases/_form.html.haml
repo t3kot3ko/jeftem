@@ -1,0 +1,50 @@
+= form_for @test_case, html: { class: "form form-horizontal test_case" } do |f|
+  .form-group
+    = f.label :title, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :title, class: 'form-control', required: true
+    = f.error_span(:title)
+  .form-group
+    = f.label :step, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :step, class: 'form-control', required: true
+    = f.error_span(:step)
+  .form-group
+    = f.label :precondition, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :precondition, class: 'form-control', required: true
+    = f.error_span(:precondition)
+  .form-group
+    = f.label :postcondition, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :postcondition, class: 'form-control', required: true
+    = f.error_span(:postcondition)
+  .form-group
+    = f.label :expected_result, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :expected_result, class: 'form-control', required: true
+    = f.error_span(:expected_result)
+  .form-group
+    = f.label :identifier, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :identifier, class: 'form-control', required: true
+    = f.error_span(:identifier)
+  .form-group
+    = f.label :description, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :description, class: 'form-control', required: true
+    = f.error_span(:description)
+  .form-group
+    = f.label :summary, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :summary, class: 'form-control', required: true
+    = f.error_span(:summary)
+  .form-group
+    = f.label :section_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :section_id, class: 'form-control', required: true
+    = f.error_span(:section_id)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil,class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), test_cases_path, :class => 'btn btn-default'

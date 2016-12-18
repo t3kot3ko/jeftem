@@ -1,0 +1,23 @@
+%h1 Listing test_result_types
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Color
+      %th
+      %th
+      %th
+
+  %tbody
+    - @test_result_types.each do |test_result_type|
+      %tr
+        %td= test_result_type.name
+        %td= test_result_type.color
+        %td= link_to 'Show', test_result_type
+        %td= link_to 'Edit', edit_test_result_type_path(test_result_type)
+        %td= link_to 'Destroy', test_result_type, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Test result type', new_test_result_type_path
